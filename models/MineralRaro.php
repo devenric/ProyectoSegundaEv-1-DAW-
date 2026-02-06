@@ -1,5 +1,5 @@
 <?php
-class MineralRaro extends EntidadEstelar{
+class MineralRaro extends EntidadEstelar implements iInteractuable{
     private $dureza;
 
     function __construct($ID, $nombre,$planetaOrigen,$nivelEstabilidad, $dureza){ //Nota: al padre le ponemos $raza, porque el parent::__construct, 
@@ -8,4 +8,5 @@ class MineralRaro extends EntidadEstelar{
     }
     function getDureza(){return $this->dureza;}
     function setDureza($dureza){return $this->dureza = $dureza;}
+    function reaccionar(){echo "Brilla con intensidad azulada";}
 }

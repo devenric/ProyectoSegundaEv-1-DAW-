@@ -12,14 +12,15 @@ abstract class EntidadEstelar{
         $this->nivelEstabilidad = $nivelEstabilidad;
     }
     function getID(){return $this->ID;}
-    function setID(){return $this->ID;}
+    function setID($ID){return $this->ID = $ID;}
 
     function getNombre(){return $this->nombre;}
-    function setNombre(){return $this->nombre;}
+    function setNombre($nombre){return $this->nombre = $nombre;}
     
     function getPlanetaOrigen(){return $this->planetaOrigen;}
-    function setPlanetaOrigen(){return $this->planetaOrigen;}
+    function setPlanetaOrigen($planetaOrigen){return $this->planetaOrigen = $planetaOrigen;}
     
     function getNivelEstabilidad(){return $this->nivelEstabilidad;}
-    function setNivelEstabilidad(){return $this->nivelEstabilidad;}
+    function setNivelEstabilidad($nivelEstabilidad){return $this->nivelEstabilidad = $nivelEstabilidad;}
+    abstract function reaccionar();
 }

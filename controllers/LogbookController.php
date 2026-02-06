@@ -6,7 +6,15 @@ class LogbookController{
         $this->gestor = new Gestor();
     }
     function index(){
-        $descubrimientos = $this->gestor->obtenerTodos();
+        $elementosPagina = 5;
+        $pagActual = isset($_GET['p']) ? $_GET['p'] : 1;
+
+        $listaTotal = $this->gestor->obtenerTodos();
+        $totalElementos = count($listaTotal);
+
+        $totalPaginas = ceil($totalElementos/$elementosPagina);
+        $inicio = ($pagActual-1) * $elementosPagina;
+        $descubrimientos = array_slice($listaTotal,$inicio,$elementosPagina);
         include "views/listar.php";
     }
     function guardar(){
@@ -31,7 +39,10 @@ class LogbookController{
                 $descubrimiento = new MineralRaro($ID, $nombre,$planetaOrigen,$nivelEstabilidad,$dureza);
             }
             if ($descubrimiento !== null) {
-                $this->gestor->guardar($descubrimiento);
+            $reaccionar = $descubrimiento->reaccionar();
+            echo "<script> alert('Hallazgo Encontrado! $reaccionar'); window.location.href='index.php'</script>";
+            $this->gestor->guardar($descubrimiento);
+
                 header("Location: index.php");
                 exit;
             }else{

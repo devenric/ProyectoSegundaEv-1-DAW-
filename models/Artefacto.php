@@ -1,5 +1,5 @@
 <?php
-class Artefacto extends EntidadEstelar{
+class Artefacto extends EntidadEstelar implements iInteractuable{
     private $antig;
 
     function __construct($ID, $nombre,$planetaOrigen,$nivelEstabilidad, $antig){ //Nota: al padre le ponemos $raza, porque el parent::__construct, 
@@ -7,4 +7,5 @@ class Artefacto extends EntidadEstelar{
         $this->antig = $antig;}
     function getAntig(){return $this->antig;}
     function setAntig($antig){return $this->antig = $antig;}
+    function reaccionar(){echo "Reproduce un mensaje en una lengua Muerta";}
 }

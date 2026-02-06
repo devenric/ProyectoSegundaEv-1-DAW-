@@ -14,7 +14,7 @@ $_SESSION['descubrimientos'][] = $descubrimiento;
     function buscar($ID){
 foreach ($_SESSION['descubrimientos'] as $d) {
     if ($d->getID() == $ID) {
-        return $ID;
+        return $d;
     }
     return null;
 }

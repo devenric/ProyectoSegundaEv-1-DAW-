@@ -11,7 +11,7 @@
     form:has(option[value="artefacto"]:checked) .artefactoCampo {
         display: block;
     }
-    form:has(option[value="lifeForms"]:checked) .lifeForms {
+    form:has(option[value="lifeForm"]:checked) .lifeForms {
         display: block;
     }
     form:has(option[value="mineralRaro"]:checked) .mineralRaro {
@@ -28,7 +28,7 @@
         
         <select name="tipoDescubrimiento" id="tipoDescubrimiento">Selecciona un tipo de descubrimiento
             <option value="artefacto" name="artefacto" class="artefacto">Artefacto</option>
-            <option value="lifeForms" name ="lifeForm">Formas de Vida</option>
+            <option value="lifeForm" name ="lifeForm">Formas de Vida</option>
             <option value="mineralRaro" name="mineralRaro">Mineral Raro</option>
         </select><br><br>
         <input type="text" name="artefacto" placeholder="artefacto"class="artefactoCampo">

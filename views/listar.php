@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet"href="../styles/listar.css">
 </head>
 <body>
     <h1>Logbook De La Expedición</h1>
@@ -40,6 +41,11 @@
                 </tr>
             <?php endforeach;?>
         </table>
+        <div class="paginacion">
+            <?php for ($i=1; $i <=$totalPaginas ; $i++):?>
+                <a href="index.php?p=<?=$i ?>"><?= $i ?></a>
+            <?php endfor;?>
+        </div>
         <?php else:?>
             <p>¡Aún no hay Descubrimientos, Añade uno!</p>
         <?php endif;?>

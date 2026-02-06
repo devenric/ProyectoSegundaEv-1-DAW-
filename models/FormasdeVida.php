@@ -1,5 +1,5 @@
 <?php
-class FormasdeVida extends EntidadEstelar{
+class FormasdeVida extends EntidadEstelar implements iInteractuable{ 
     private $dieta;
 
     function __construct($ID, $nombre,$planetaOrigen,$nivelEstabilidad, $dieta){ //Nota: al padre le ponemos $raza, porque el parent::__construct, 
@@ -7,4 +7,6 @@ class FormasdeVida extends EntidadEstelar{
         $this->dieta = $dieta;
     }
     function getDieta(){return $this->dieta;}
-}
+    function setDieta($dieta){return $this->dieta = $dieta;} 
+    function reaccionar(){echo "Emite un pulso electromagnético";}
+    }
